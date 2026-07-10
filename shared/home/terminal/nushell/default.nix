@@ -18,9 +18,9 @@
     nushell = {
       enable = true;
     # configFile.source = ./config.nu;
-      shellAliases = {
-        uruk = "echo Building civilisation generation by generation... ; sudo nixos-rebuild switch --impure";
-      };
+    # shellAliases = {
+    #   uruk = "echo Building civilisation generation by generation... ; sudo nixos-rebuild switch --impure";
+    # };
     };
   };
 }
