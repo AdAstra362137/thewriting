@@ -20,5 +20,6 @@
     enable = true;
     setAsDefaultBrowser = true;
     profiles.default.userChrome = builtins.readFile ./userChrome.css;
+    profiles.default.userContent = builtins.readFile ./userContent.css;
   };
 }
