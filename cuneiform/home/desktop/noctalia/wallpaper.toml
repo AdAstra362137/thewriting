@@ -1,0 +1,10 @@
+[wallpaper]
+fill_color = "tertiary"
+directory = "/home/adastra/Images/Wallpapers"
+transition = ["fade"]
+[wallpaper.automation]
+enabled = true
+interval_seconds = 600
+
+[backdrop]
+enabled = true

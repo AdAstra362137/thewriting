@@ -1,0 +1,9 @@
+[shell]
+font_family = "Work Sans"
+setup_wizard_enabled = false
+niri_overview_type_to_launch_enabled = true
+[shell.shadow]
+[shell.panel]
+transparency_mode = "glass"
+[shell.screenshot]
+directory = "~/Images/Screenshots"

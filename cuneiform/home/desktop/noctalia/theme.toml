@@ -1,0 +1,7 @@
+[theme]
+mode = "auto"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+[theme.templates]
+builtin_ids = ["niri", "wezterm"]
+community_ids = ["zen-browser", "neovim", "discord", "yazi", "steam"]

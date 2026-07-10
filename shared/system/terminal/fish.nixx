@@ -1,0 +1,12 @@
+{ pkgs, ... }:
+
+{ 
+  programs = {
+    fish = {
+      enable = true;
+      shellAliases = {
+        uruk = "echo Building civilisation generation by generation... && sudo nixos-rebuild switch --flake ~/NixOS#cuneiform --impure";
+      };
+    };
+  };
+}

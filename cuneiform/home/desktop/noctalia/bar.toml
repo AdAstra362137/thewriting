@@ -1,0 +1,31 @@
+[bar.main]
+position = "left"
+thickness = 48
+background_opacity = 0.33
+margin_ends = 12
+margin_edge = 12
+padding = 12
+start  = ["clock", "spacer", "date", "spacer", "lock_keys", "battery", "notifications", "clipboard"]
+center = ["taskbar"]
+end    = ["tray", "nightlight", "theme_mode", "volume", "brightness", "network", "bluetooth",  "session"]
+font_weight = 720
+
+[widget.clock]
+scale = 1.50
+format = "%T"
+[widget.taskbar]
+scale = 1.33
+only_active_workspace = true
+group_single_icon_per_app = true
+show_active_indicator = false
+active_opacity = 1.0
+inactive_opacity = 0.75
+[widget.lock_keys]
+hide_when_off = true
+[widget.battery]
+display_mode = "graphic"
+show_label = false
+[widget.network]
+show_label = false
+[widget.session]
+color = "error"

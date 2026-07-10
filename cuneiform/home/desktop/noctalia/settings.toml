@@ -1,0 +1,8 @@
+[location]
+auto_locate = true
+[nightlight]
+enabled = true
+[calendar]
+enabled = false
+[weather]
+enabled = true
