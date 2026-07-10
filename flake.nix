@@ -44,7 +44,6 @@
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
     let
       packages = [
-        ./shared/system
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -61,6 +60,7 @@
           system = "x86_64-linux";
           modules = packages ++ [
             ./cuneiform/system
+            ./shared/system
             {
               home-manager = {
                 users.adastra = { pkgs, self, inputs, ... }: { 
