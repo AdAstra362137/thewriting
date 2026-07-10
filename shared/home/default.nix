@@ -13,8 +13,5 @@ in
     username = "adastra";
     homeDirectory = "/home/adastra";
     stateVersion = "26.05";
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 }
