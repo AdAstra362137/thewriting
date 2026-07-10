@@ -1,23 +1,24 @@
 { inputs, config, pkgs, lib, ... }:
-let
-  repoRoot = "${config.home.homeDirectory}/thewriting";
-  storeSelf = toString ./.;
-  storeRoot = toString inputs.self;
-  subpath = lib.removePrefix "${storeRoot}/" storeSelf;
-  realPath = "${repoRoot}/${subpath}";
-  name = builtins.baseNameOf realPath;
-  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-in
+#let
+# repoRoot = "${config.home.homeDirectory}/thewriting";
+# storeSelf = toString ./.;
+# storeRoot = toString inputs.self;
+# subpath = lib.removePrefix "${storeRoot}/" storeSelf;
+# realPath = "${repoRoot}/${subpath}";
+# name = builtins.baseNameOf realPath;
+# create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+#in
 {
-  xdg.configFile.${name} = {
-    source = create_symlink realPath;
-    recursive = true;
-  };
+# xdg.configFile.${name} = {
+#   source = create_symlink realPath;
+#   recursive = true;
+# };
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
+    profiles.default.userChrome = builtins.readFile ./userChrome.css;
   };
 }

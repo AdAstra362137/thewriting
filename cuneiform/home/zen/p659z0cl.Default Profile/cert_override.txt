@@ -1,3 +1,0 @@
-# PSM Certificate Override Settings file
-# This is a generated file!  Do not edit.
-mladiobcane.cz:443:	OID.2.16.840.1.101.3.4.2.1	66:20:DA:D5:C0:2E:BA:8B:8E:C6:FC:E1:A7:28:40:AA:D7:94:3E:8F:6B:A1:69:E7:9D:3E:1D:16:E4:EA:3F:1E	
