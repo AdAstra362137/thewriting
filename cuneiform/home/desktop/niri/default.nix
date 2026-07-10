@@ -1,6 +1,6 @@
 { inputs, config, pkgs, lib, ... }:
 let
-  repoRoot = "${config.home.homeDirectory}/NixOS";
+  repoRoot = "${config.home.homeDirectory}/thewriting";
   storeSelf = toString ./.;
   storeRoot = toString inputs.self;
   subpath = lib.removePrefix "${storeRoot}/" storeSelf;
