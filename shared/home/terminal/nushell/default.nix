@@ -17,10 +17,10 @@
   programs = {
     nushell = {
       enable = true;
-    # configFile.source = ./config.nu;
-    # shellAliases = {
-    #   uruk = "echo Building civilisation generation by generation... ; sudo nixos-rebuild switch --impure";
-    # };
+      configFile.source = ./config.nu;
+      settings = {
+        show_banner = false;
+      };
     };
   };
 }
