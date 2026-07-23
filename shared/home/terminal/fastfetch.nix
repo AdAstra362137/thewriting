@@ -2,7 +2,7 @@
 { ... }:
 
 { 
-  programs.hyfetch = {
+  programs.fastfetch = {
     enable = true;
   };
 }
