@@ -2,7 +2,8 @@
   description = "NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     #home manager
     home-manager = {
       url = "github:nix-community/home-manager"; 
@@ -41,8 +42,13 @@
       url = "github:probeldev/niri-screen-time";
     };
   };
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }: 
     let
+      system = "x86_64-linux";
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       packages = [
         home-manager.nixosModules.home-manager
         {
@@ -56,20 +62,20 @@
     {
       nixosConfigurations = {
         cuneiform = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          system = "x86_64-linux";
+          specialArgs = { inherit pkgs-stable inputs self; };
           modules = packages ++ [
             ./cuneiform/system
             ./shared/system
             {
+              nixpkgs.config.allowUnfree = true;
               home-manager = {
-                users.adastra = { pkgs, self, inputs, ... }: { 
+                users.adastra = {  ... }: { 
 		  imports = [
 		    ./cuneiform/home
 		    ./shared/home
 		  ];
 		};
-                extraSpecialArgs = { inherit self inputs; };
+                extraSpecialArgs = { inherit self inputs pkgs-stable; };
               };
             }
           ];
